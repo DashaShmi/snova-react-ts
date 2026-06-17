@@ -1,0 +1,28 @@
+.marquee-strip {
+  background: var(--pink);
+  color: var(--white);
+  overflow: hidden;
+  padding: 0.85rem 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track span {
+  padding: 0 2.5rem;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,13 @@
+$bp-tablet: 900px;
+$bp-mobile: 600px;
+
+@mixin pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+}

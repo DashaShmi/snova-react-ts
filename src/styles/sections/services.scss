@@ -1,0 +1,47 @@
+@use './lesson-card';
+
+.services {
+  background: var(--blue);
+  color: var(--white);
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.flower-badge {
+  width: clamp(140px, 18vw, 200px);
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+@media (max-width: 900px) {
+  .services {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 2.75rem 1.25rem 3rem;
+    gap: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: min(100%, 720px);
+    gap: clamp(1.5rem, 5vw, 2.25rem);
+  }
+
+  .services .service-card-lesson {
+    max-width: 100%;
+    background: color-mix(in srgb, var(--blue) 88%, var(--white));
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,21 @@
+.blog {
+  background: var(--gray);
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.blog-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 52rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.05;
+}
+
+.blog-text {
+  max-width: 52ch;
+  line-height: 1.65;
+}

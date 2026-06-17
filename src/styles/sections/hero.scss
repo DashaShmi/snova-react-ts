@@ -1,0 +1,119 @@
+.hero {
+  background: var(--gray);
+  padding: 1rem 0 2rem;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-brand-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 12vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.hero-intro {
+  font-size: clamp(0.84rem, 2.8vw, 0.98rem);
+  line-height: 1.45;
+  color: var(--blue);
+  width: 66%;
+  margin-left: 34%;
+}
+
+.hero-mid {
+  position: relative;
+  min-height: 260px;
+}
+
+.hero-photo-zone {
+  position: relative;
+}
+
+.hero-star {
+  position: absolute;
+  z-index: 6;
+}
+
+.hero-star-1 {
+  width: 58px;
+  top: 18%;
+  left: 2%;
+}
+
+.hero-star-2 {
+  width: 48px;
+  top: 8%;
+  right: 6%;
+}
+
+.hero-star-3 {
+  width: 42px;
+  top: 34%;
+  right: 2%;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  width: min(72%, 340px);
+}
+
+.hero-hand-greeting {
+  position: absolute;
+  top: 35%;
+  left: 58%;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  color: var(--blue);
+}
+
+.hero-about-card {
+  background: var(--pink);
+  color: var(--white);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 2.5rem 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-about-text {
+  max-width: 52ch;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.85rem;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 0.25rem;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+
+  .btn-pill {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 200px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-actions .btn-pill {
+    max-width: none;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+}

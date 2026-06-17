@@ -1,0 +1,187 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 380px;
+}
+
+.footer-social {
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 2rem 3rem;
+}
+
+.social-card {
+  width: min(100%, 560px);
+  padding: 0;
+  text-align: center;
+}
+
+.social-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--blue);
+  margin-bottom: 1.75rem;
+  line-height: 1.35;
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(1rem, 4vw, 2rem);
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 0;
+  max-width: 11rem;
+}
+
+.social-icons a {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  background: var(--pink);
+  border-radius: 50%;
+  transition: transform 0.15s, background 0.15s;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: scale(1.12);
+    background: var(--blue);
+  }
+}
+
+.social-icons svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.social-item-desc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--blue);
+  text-align: center;
+}
+
+.footer-club {
+  background: var(--pink);
+  color: var(--white);
+  padding: clamp(2.5rem, 6vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.club-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  line-height: 1.05;
+}
+
+.club-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 38ch;
+  opacity: 0.95;
+}
+
+.club-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.club-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  &:focus {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.22);
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .footer-social {
+    order: 1;
+    min-height: auto;
+    padding: 1rem 1.25rem 2.5rem;
+  }
+
+  .footer-club {
+    order: 2;
+    padding: 2.5rem 1.5rem 2.75rem;
+    padding-bottom: max(2.75rem, env(safe-area-inset-bottom));
+  }
+
+  .social-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .club-title {
+    font-size: clamp(1.65rem, 7vw, 2.25rem);
+  }
+}
+
+@media (max-width: 390px) {
+  .social-icons a {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-icons {
+    gap: 0.85rem;
+  }
+
+  .social-item {
+    max-width: 7.5rem;
+  }
+
+  .social-item-desc {
+    font-size: 0.75rem;
+  }
+
+  .club-form {
+    flex-direction: column;
+  }
+
+  .club-input {
+    min-width: 100%;
+    min-height: 44px;
+  }
+}
