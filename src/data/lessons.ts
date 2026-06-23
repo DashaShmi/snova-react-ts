@@ -1,5 +1,10 @@
 import type { Lesson } from '../types/content'
 
+import lessonPhoto from '../assets-internal/lesson-photo.jpg'
+import silverLessonPhoto from '../assets-internal/silver-lesson-photo.jpg'
+import offlinePhoto from '../assets-internal/offline-photo.jpg'
+import practicumPhoto from '../assets-internal/practicum-photo.jpg'
+
 export const onlineLessons: Lesson[] = [
   {
     id: 'lesson-1',
@@ -8,7 +13,7 @@ export const onlineLessons: Lesson[] = [
     materials: 'Вам понадобится: 6-8 пакетов, ножницы, утюг, пекарская бумага.',
     duration: '~1,5 часа',
     level: 'начальный',
-    image: '/assets/lesson-photo.jpg',
+    image: lessonPhoto,
     imageAlt: 'Рука с пакетом для фруктов — материал для урока',
     price: 'Цена: 2600 руб / 70 GEL',
     note: 'После оплаты, присылайте квитанцию в Telegram и я открою вам доступ к уроку',
@@ -22,7 +27,7 @@ export const onlineLessons: Lesson[] = [
     extraBody: 'Вам понадобится: фольгированный пакет от кофейных зерен или корма для животных, ножницы, швейная машинка.',
     duration: '~2 часа',
     level: 'средний',
-    image: '/assets/silver-lesson-photo.jpg',
+    image: silverLessonPhoto,
     imageAlt: 'Обложка на паспорт из фольгированного пакета',
     price: 'Цена: 3000 руб / 90 GEL',
     note: 'После оплаты, присылайте квитанцию в Telegram и я открою вам доступ к уроку',
@@ -38,7 +43,7 @@ export const offlineLessons: Lesson[] = [
     body: 'Вы под моим руководством будете плавить пакеты в прочный материал, составлять коллаж, можно приносить свой пакет с пакетами! А потом сами сошьете на машинке: косметичку, кошелек или обложку на паспорт.',
     duration: '~2,5 часа',
     level: 'начальный',
-    image: '/assets/offline-photo.jpg',
+    image: offlinePhoto,
     imageAlt: 'Две участницы мастер-класса с готовыми аксессуарами из пакетов',
     price: 'Цена: соло / 200 GEL, в паре / 250 GEL',
     note: 'После оплаты, выбираем день и время. Локация в районе м.Медицинский университет',
@@ -52,7 +57,7 @@ export const offlineLessons: Lesson[] = [
     body: 'Открытый мастер класс где вы в группе от 4 человек под моим руководством будете составлять коллаж, плавить пакеты в прочный материал, вырезать детали. Можно приносить свой пакет с пакетами! После чего из расплавленного материала я при вас быстро сошью косметичку или обложку на паспорт.',
     duration: '~2 часа',
     level: 'начальный',
-    image: '/assets/practicum-photo.jpg',
+    image: practicumPhoto,
     imageAlt: 'Участники коллективного практикума за работой с пакетами',
     price: 'Цена: 60 GEL',
     note: 'После оплаты, выбираем день и время. Локация в районе м.Медицинский университет',

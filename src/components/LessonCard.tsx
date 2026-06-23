@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { Lesson } from '../types/content'
+import offlineStars from '../assets-internal/offline-stars.png'
 
 interface LessonCardProps {
   lesson: Lesson
@@ -12,7 +13,7 @@ export function LessonCard({ lesson }: LessonCardProps) {
     <article className="service-card service-card-lesson" id={lesson.id}>
       {lesson.showStars ? (
         <div className="offline-photo-wrap">
-          <img className="offline-stars" src="/assets/offline-stars.png" alt="" aria-hidden="true" />
+          <img className="offline-stars" src={offlineStars} alt="" aria-hidden="true" />
           <img className="lesson-photo" src={lesson.image} alt={lesson.imageAlt} />
         </div>
       ) : (

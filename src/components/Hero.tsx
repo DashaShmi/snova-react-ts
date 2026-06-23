@@ -1,3 +1,6 @@
+import heroPortrait from '../assets-internal/hero-portrait.png'
+import offlineStars from '../assets-internal/offline-stars.png'
+
 export function Hero() {
   return (
     <section className="hero" id="home">
@@ -14,7 +17,7 @@ export function Hero() {
           <div className="hero-mid">
             <div className="hero-photo-zone">
               <div className="hero-photo-wrap">
-                <img className="hero-photo" src="/assets/hero-portrait.png" alt="Даша — основательница SNOVA" />
+                <img className="hero-photo" src={heroPortrait} alt="Даша — основательница SNOVA" />
                 <span className="hero-hand hero-hand-greeting">
                   Привет, мусорным энтузиастам!
                 </span>
@@ -25,7 +28,7 @@ export function Hero() {
 
         <img
           className="hero-stars"
-          src="/assets/offline-stars.png"
+          src={offlineStars}
           alt=""
           aria-hidden="true"
         />
