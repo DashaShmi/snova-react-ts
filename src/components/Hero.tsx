@@ -1,9 +1,4 @@
-interface HeroProps {
-  onOfflineClick: () => void
-  onOnlineClick: () => void
-}
-
-export function Hero({ onOfflineClick, onOnlineClick }: HeroProps) {
+export function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-inner">
@@ -20,11 +15,20 @@ export function Hero({ onOfflineClick, onOnlineClick }: HeroProps) {
             <div className="hero-photo-zone">
               <div className="hero-photo-wrap">
                 <img className="hero-photo" src="/assets/hero-portrait.png" alt="Даша — основательница SNOVA" />
-                <span className="hero-hand hero-hand-greeting">Привет, мусорным энтузиастам!</span>
+                <span className="hero-hand hero-hand-greeting">
+                  Привет, мусорным энтузиастам!
+                </span>
               </div>
             </div>
           </div>
         </div>
+
+        <img
+          className="hero-stars"
+          src="/assets/offline-stars.png"
+          alt=""
+          aria-hidden="true"
+        />
 
         <div className="hero-about-card">
           <p className="hero-about-text">
@@ -34,12 +38,12 @@ export function Hero({ onOfflineClick, onOnlineClick }: HeroProps) {
         </div>
 
         <div className="hero-actions">
-          <button className="btn-pill btn-lime" type="button" onClick={onOfflineClick}>
+          <a className="btn-pill btn-lime" href="#offline">
             оффлайн
-          </button>
-          <button className="btn-pill btn-cream" type="button" onClick={onOnlineClick}>
+          </a>
+          <a className="btn-pill btn-cream" href="#services">
             онлайн
-          </button>
+          </a>
         </div>
       </div>
     </section>

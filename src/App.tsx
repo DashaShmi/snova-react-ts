@@ -16,12 +16,9 @@ function App() {
 
   return (
     <>
-      <Header onPrimaryClick={() => scrollToSection('home')} />
+      <Header onPrimaryClick={() => scrollToSection('lesson-1')} />
       <main>
-        <Hero
-          onOfflineClick={() => scrollToSection('offline')}
-          onOnlineClick={() => scrollToSection('lesson-1')}
-        />
+        <Hero />
         <Marquee />
         <Services />
         <Offline />

@@ -46,9 +46,14 @@ export function LessonCard({ lesson }: LessonCardProps) {
           <p className="lesson-price">{lesson.price}</p>
           <p className="lesson-note">{lesson.note}</p>
           <div className="lesson-actions">
-            <button className="btn-pill btn-lime" type="button">
+            <a
+              className="btn-pill btn-lime"
+              href="https://dashashmi.github.io/SNOVA-payment"
+              target="_blank"
+              rel="noreferrer"
+            >
               купить
-            </button>
+            </a>
             <a className="btn-pill btn-cream" href={lesson.telegramUrl} target="_blank" rel="noreferrer">
               {lesson.telegramLabel}
             </a>
