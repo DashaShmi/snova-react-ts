@@ -107,6 +107,20 @@
   margin-top: 0.5rem;
 }
 
+.club-error {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #fff5c2;
+}
+
+.club-success {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
 .club-input {
   flex: 1;
   min-width: 180px;

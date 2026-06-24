@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { subscribeToClub } from '../api/subscribeToClub'
+
 const socialLinks = [
   {
     href: 'https://www.instagram.com/snova.upcycle/',
@@ -38,6 +41,46 @@ const socialLinks = [
 ] as const
 
 export function Footer() {
+  const [contact, setContact] = useState('')
+  const [error, setError] = useState('')
+  const [formTouched, setFormTouched] = useState(false)
+  const [subscriptionIsComplete, setSubscriptionIsComplete] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const checkForm = (): boolean => {
+    if (contact.trim() === '') {
+      setError('Укажите email или ник в Telegram')
+      return false
+    }
+
+    setError('')
+    return true
+  }
+
+  const submitHandler = async (event: React.FormEvent) => {
+    event.preventDefault()
+    setFormTouched(true)
+
+    if (!checkForm()) {
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const isSent = await subscribeToClub(contact)
+
+      if (isSent) {
+        setSubscriptionIsComplete(true)
+        setContact('')
+      } else {
+        alert('ошибка')
+      }
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <footer className="footer" id="contact">
       <div className="footer-social">
@@ -60,12 +103,26 @@ export function Footer() {
         <p className="club-text">
           Подпишись, чтобы не пропустить анонсы мастер-классов, уборок мусора, дропы и полезные материалы.
         </p>
-        <form className="club-form" onSubmit={(event) => event.preventDefault()}>
-          <input className="club-input" type="email" placeholder="ваш ник в telegram или email" />
-          <button className="btn-pill btn-cream" type="submit">
-            подписаться
-          </button>
-        </form>
+        {subscriptionIsComplete ? (
+          <p className="club-success">Подписка оформлена! Скоро буду на связи.</p>
+        ) : (
+          <form className="club-form" onSubmit={submitHandler}>
+            <input
+              className="club-input"
+              type="text"
+              placeholder="ваш ник в telegram или email"
+              value={contact}
+              onChange={(event) => {
+                setContact(event.target.value)
+                setFormTouched(true)
+              }}
+            />
+            <button className="btn-pill btn-cream" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? 'отправляем...' : 'подписаться'}
+            </button>
+            {formTouched && error ? <p className="club-error">{error}</p> : null}
+          </form>
+        )}
       </div>
     </footer>
   )

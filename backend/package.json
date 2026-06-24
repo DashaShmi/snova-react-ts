@@ -1,0 +1,15 @@
+{
+  "name": "snova-landing-backend",
+  "version": "1.0.0",
+  "description": "бекенд для формы подписки на лендинге SNOVA",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && cd dist && zip -r yandex_dist.zip ./*"
+  },
+  "author": "Dasha Shmizha",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.9.3"
+  }
+}
