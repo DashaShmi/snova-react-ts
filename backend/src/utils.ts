@@ -2,6 +2,15 @@ import type { CreateOrderData } from './CreateOrderData'
 
 const brevoApiKey = process.env.BREVO_API_KEY ?? ''
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 if (brevoApiKey.length === 0) {
   console.error('BREVO_API_KEY не указан')
   throw new Error('BREVO_API_KEY не указан')
@@ -46,11 +55,13 @@ export function createClientEmailBody(orderData: CreateOrderData): string {
 
 export function createAdminEmailBody(orderData: CreateOrderData): string {
   let mail_text = ''
+  const safeTelegram = escapeHtml(orderData.telegram || '—')
+  const safeEmail = escapeHtml(orderData.email || '—')
 
   mail_text += '<h2>Даша, привет!</h2>'
   mail_text += '<p>Новая подписка на эко-клуб с лендинга!</p>'
-  mail_text += `<p>Telegram клиента:${orderData.telegram}</p>`
-  mail_text += `<p>Email клиента:${orderData.email}</p>`
+  mail_text += `<p>Telegram клиента:${safeTelegram}</p>`
+  mail_text += `<p>Email клиента:${safeEmail}</p>`
 
   console.log(mail_text)
 

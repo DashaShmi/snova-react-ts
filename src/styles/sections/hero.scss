@@ -147,6 +147,25 @@
   }
 }
 
+@media (min-width: 901px) {
+  .hero-intro {
+    font-size: 1.125rem;
+  }
+
+  .hero-about-text {
+    font-size: 1.125rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-hand-greeting {
+    left: calc(110% + 1.25cm);
+    font-size: 1.85rem;
+    max-width: 14rem;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-mid {
     min-height: clamp(260px, 58vw, 340px);

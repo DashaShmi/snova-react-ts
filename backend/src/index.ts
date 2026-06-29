@@ -23,7 +23,10 @@ module.exports.handler = async function (body: { httpMethod?: string }, context:
   const textAdmin = createAdminEmailBody(orderData)
   const textClient = createClientEmailBody(orderData)
 
-  sendEmail(orderData.email, textClient)
+  if (orderData.email && orderData.email.includes('@')) {
+    sendEmail(orderData.email, textClient)
+  }
+
   sendEmail('ishmizh@gmail.com', textAdmin)
 
   return {

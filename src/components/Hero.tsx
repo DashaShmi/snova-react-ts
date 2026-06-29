@@ -19,7 +19,7 @@ export function Hero() {
               <div className="hero-photo-wrap">
                 <img className="hero-photo" src={heroPortrait} alt="Даша — основательница SNOVA" />
                 <span className="hero-hand hero-hand-greeting">
-                  Привет, мусорным энтузиастам!
+                  Привет,&nbsp;мусорным энтузиастам!
                 </span>
               </div>
             </div>
