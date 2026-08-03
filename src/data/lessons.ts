@@ -29,7 +29,7 @@ export const onlineLessons: Lesson[] = [
     level: 'средний',
     image: silverLessonPhoto,
     imageAlt: 'Обложка на паспорт из фольгированного пакета',
-    price: 'Цена: 3000 руб / 90 GEL',
+    price: 'Цена: 3000 руб / 100 GEL',
     note: 'После оплаты, присылайте квитанцию в Telegram и я открою вам доступ к уроку',
     telegramLabel: 'написать в Telegram',
     telegramUrl: 'https://t.me/shmizh',
